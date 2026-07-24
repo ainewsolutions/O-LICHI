@@ -960,6 +960,58 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
+
+        /* Location Section CSS */
+        .location-wrapper {
+            max-width: 1200px;
+            margin: 1rem auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .location-card {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 250px;
+            border-radius: var(--radius-md);
+            border: none;
+            background-color: var(--border-color);
+        }
+        
+        .map-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 0.8rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .map-btn:hover {
+            background-color: var(--border-color);
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -977,7 +1029,7 @@
                 <div class="logo-text">OOLLCHI</div>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
-                <a href="https://www.google.com/maps?q=29.96434211730957,32.54067611694336&z=17&hl=en" target="_blank" class="theme-toggle" style="text-decoration: none; font-size: 1.3rem;" aria-label="Restaurant Location" title="موقع المطعم">
+                <a href="https://maps.app.goo.gl/szLTDf8KixqQLU9bA?g_st=ac" target="_blank" class="theme-toggle" style="text-decoration: none; font-size: 1.3rem;" aria-label="Restaurant Location" title="موقع المطعم">
                     📍
                 </a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
@@ -1001,6 +1053,20 @@
     <main class="menu-container" id="menuContainer">
         <!-- Menu sections and items injected here -->
     </main>
+
+    <div class="location-wrapper">
+        <div class="location-card">
+            <div class="location-header">
+                <span style="font-size: 1.5rem;">📍</span> Find Us (Oollchi)
+            </div>
+            <!-- Google Maps Embed Iframe -->
+            <iframe class="map-embed" src="https://maps.google.com/maps?q=Oollchi+sushi,+Suez&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <a href="https://maps.app.goo.gl/szLTDf8KixqQLU9bA?g_st=ac" target="_blank" class="map-btn">
+                Open in Google Maps 🗺️
+            </a>
+        </div>
+    </div>
 
     <button class="floating-cart hidden" id="floatingCartBtn">
         <div class="cart-info">
