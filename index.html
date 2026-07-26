@@ -247,6 +247,36 @@
             transform: translateY(-2px);
         }
 
+        /* --- Special Tab Styling --- */
+        .category-btn.special-tab {
+            background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+            color: #ffffff !important;
+            border: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4);
+            animation: pulse-glow 2s infinite;
+        }
+
+        .category-btn.special-tab:hover {
+            transform: translateY(-2px);
+        }
+
+        .category-btn.special-tab.active {
+            background: linear-gradient(135deg, #d32f2f, #e65100);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+            transform: translateY(-2px) scale(1.05);
+            animation: none; /* Stop glow when selected */
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 8, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0); }
+        }
+        /* ------------------------- */
+
         .menu-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -310,6 +340,15 @@
         .menu-card:hover {
             box-shadow: var(--shadow-md);
             transform: translateY(-4px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+            display: block;
         }
 
         /* CSS Placeholder for Sushi Images */
@@ -1139,6 +1178,19 @@
         // Extracted data from the provided O'LICHI menu images
         const menuData = [
             {
+                id: 'cat_special_boxes',
+                name: 'Special Boxes',
+                icon: '🎁',
+                type: 'roll',
+                items: [
+                    { id: 'box_nami', name: 'Nami Box (18 Pieces)', desc: 'Crispy Lovers: 4 Hot Crab, 4 Hot Shrimp, 4 Crunchy Tempura, 6 Fried Crab Hoso.', sizes: { 'Standard': 295 }, image: 'images/nami_box.jpg' },
+                    { id: 'box_samurai', name: 'Samurai Box (29 Pieces)', desc: 'Crunchy Mix: 6 Spicy Lemon, 4 Crunchy Salmon, 5 Fried Cheddar, 6 Fried Salmon Hoso, 6 Fried Shrimp Hoso.', sizes: { 'Standard': 425 }, image: 'images/samurai_box.jpg' },
+                    { id: 'box_fuji', name: 'Fuji Box (36 Pieces)', desc: 'Best Seller: 6 Golden Bermuda, 8 Crunchy Salmon, 8 Philadelphia Maki, 4 Hot Shrimp, 6 Fried Salmon Hoso, 4 Pink Maki.', sizes: { 'Standard': 595 }, image: 'images/fuji_box.jpg' },
+                    { id: 'box_sakura', name: 'Sakura Box (48 Pieces)', desc: 'Premium Selection: 8 Fire Volcano, 8 New Style Maki, 8 Philadelphia Maki, 8 Spicy Lemon, 8 Fried Shrimp Hoso, 8 Shrimp Caviar.', sizes: { 'Standard': 720 }, image: 'images/sakura_box.jpg' },
+                    { id: 'box_signature', name: 'Signature Box (60 Pieces)', desc: 'Chef\'s Choice: 6 Spicy Lemon, 6 Golden Bermuda, 8 Fire Volcano, 8 Ocean Delight, 8 New Style Maki, 8 Philadelphia Maki, 8 Crunchy Salmon, 8 Fried Salmon Hoso.', sizes: { 'Standard': 895 }, image: 'images/signature_box.jpg' }
+                ]
+            },
+            {
                 id: 'cat_combo',
                 name: 'Combo',
                 icon: '🍱',
@@ -1340,7 +1392,8 @@
         function renderCategories() {
             let html = `<button class="category-btn active" data-cat="all">All Menu</button>`;
             menuData.forEach(cat => {
-                html += `<button class="category-btn" data-cat="${cat.id}">${cat.icon} ${cat.name}</button>`;
+                const specialClass = cat.id === 'cat_special_boxes' ? 'special-tab' : '';
+                html += `<button class="category-btn ${specialClass}" data-cat="${cat.id}">${cat.icon} ${cat.name}</button>`;
             });
             categoriesNav.innerHTML = html;
         }
@@ -1411,6 +1464,7 @@
 
                     const cardHtml = `
                         <div class="menu-card" data-id="${item.id}">
+                            ${item.image ? `<img src="${item.image}" alt="${item.name}" class="card-image" onerror="this.style.display='none'">` : ''}
                             <div class="card-content">
                                 <div class="item-header">
                                     <h3 class="item-name">${item.name}</h3>
