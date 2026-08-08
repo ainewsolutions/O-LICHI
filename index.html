@@ -366,6 +366,7 @@
         .card-image-placeholder[data-type="nigiri"] { background: linear-gradient(135deg, #e74c3c, #c0392b); }
         .card-image-placeholder[data-type="noodles"] { background: linear-gradient(135deg, #f1c40f, #f39c12); }
         .card-image-placeholder[data-type="appetizer"] { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .card-image-placeholder[data-type="drink"] { background: linear-gradient(135deg, #d32f2f, #ff9800); }
 
         .sushi-icon {
             font-size: 5rem;
@@ -1333,6 +1334,33 @@
                     { id: 'h5', name: 'Fried Shrimp ebi hoso 6 piece', sizes: { 'Standard': 70 } },
                     { id: 'h6', name: 'Fried Crab hoso 6 piece', sizes: { 'Standard': 65 } }
                 ]
+            },
+            {
+                id: 'cat_boba',
+                name: 'Boba',
+                icon: '🧋',
+                type: 'drink',
+                items: [
+                    { id: 'bb1', name: 'Strawberry Milk', desc: 'Milk • Strawberry • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb1.jpg' },
+                    { id: 'bb2', name: 'Mango Milk', desc: 'Milk • Mango • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb2.jpg' },
+                    { id: 'bb3', name: 'Peach Milk', desc: 'Milk • Peach • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb3.jpg' },
+                    { id: 'bb4', name: 'Lychee Milk', desc: 'Milk • Lychee • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb4.jpg' },
+                    { id: 'bb5', name: 'Caramel Milk', desc: 'Milk • Caramel • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb5.jpg' },
+                    { id: 'bb6', name: 'Matcha Milk', desc: 'Milk • Matcha • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb6.jpg' },
+                    { id: 'bb7', name: 'Strawberry Matcha', desc: 'Matcha • Strawberry • Milk • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb7.jpg' },
+                    { id: 'bb8', name: 'Mango Matcha', desc: 'Matcha • Mango • Milk • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb8.jpg' },
+                    { id: 'bb9', name: 'Green Apple Milk', desc: 'Milk • Green Apple • Boba', sizes: { 'Regular': 75, 'Large': 95 }, image: 'images/bb9.jpg' },
+                    { id: 'bs1', name: 'Strawberry Soda', desc: 'Strawberry • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs1.jpg' },
+                    { id: 'bs2', name: 'Mango Soda', desc: 'Mango • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs2.jpg' },
+                    { id: 'bs3', name: 'Peach Soda', desc: 'Peach • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs3.jpg' },
+                    { id: 'bs4', name: 'Lychee Soda', desc: 'Lychee • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs4.jpg' },
+                    { id: 'bs5', name: 'Green Apple Soda', desc: 'Green Apple • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs5.jpg' },
+                    { id: 'bs6', name: 'Passion Fruit Soda', desc: 'Passion Fruit • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs6.jpg' },
+                    { id: 'bs7', name: 'Cola Boba', desc: 'Cola • Soda • Boba', sizes: { 'Regular': 70, 'Large': 90 }, image: 'images/bs7.jpg' },
+                    { id: 'badd1', name: 'Add-on: Extra Boba', desc: 'Adds extra boba pearls to any drink', sizes: { 'Standard': 10 } },
+                    { id: 'badd2', name: 'Add-on: Extra Topping', desc: 'Adds an extra topping to any drink', sizes: { 'Standard': 5 } },
+                    { id: 'badd3', name: 'Add-on: Extra Flavor', desc: 'Adds an extra flavor shot to any drink', sizes: { 'Standard': 5 } }
+                ]
             }
         ];
 
@@ -1404,6 +1432,7 @@
                 case 'nigiri': return '🍣'; // Could use a different emoji if available, standardizing on sushi
                 case 'noodles': return '🍜';
                 case 'appetizer': return '🍤';
+                case 'drink': return '🧋';
                 default: return '🍱';
             }
         }
