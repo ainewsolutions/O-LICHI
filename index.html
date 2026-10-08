@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -349,6 +349,11 @@
             object-fit: cover;
             border-bottom: 1px solid var(--border-color);
             display: block;
+        }
+
+        /* Special Boxes posters: show the full image (no cropping of price/pieces) */
+        .card-image[src*="images/box_"] {
+            max-height: none;
         }
 
         /* CSS Placeholder for Sushi Images */
@@ -1184,11 +1189,12 @@
                 icon: '🎁',
                 type: 'roll',
                 items: [
-                    { id: 'box_nami', name: 'Nami Box (18 Pieces)', desc: 'Crispy Lovers: 4 Hot Crab, 4 Hot Shrimp, 4 Crunchy Tempura, 6 Fried Crab Hoso.', sizes: { 'Standard': 295 }, image: 'images/nami_box.jpg' },
-                    { id: 'box_samurai', name: 'Samurai Box (29 Pieces)', desc: 'Crunchy Mix: 6 Spicy Lemon, 4 Crunchy Salmon, 5 Fried Cheddar, 6 Fried Salmon Hoso, 6 Fried Shrimp Hoso.', sizes: { 'Standard': 425 }, image: 'images/samurai_box.jpg' },
-                    { id: 'box_fuji', name: 'Fuji Box (36 Pieces)', desc: 'Best Seller: 6 Golden Bermuda, 8 Crunchy Salmon, 8 Philadelphia Maki, 4 Hot Shrimp, 6 Fried Salmon Hoso, 4 Pink Maki.', sizes: { 'Standard': 595 }, image: 'images/fuji_box.jpg' },
-                    { id: 'box_sakura', name: 'Sakura Box (48 Pieces)', desc: 'Premium Selection: 8 Fire Volcano, 8 New Style Maki, 8 Philadelphia Maki, 8 Spicy Lemon, 8 Fried Shrimp Hoso, 8 Shrimp Caviar.', sizes: { 'Standard': 720 }, image: 'images/sakura_box.jpg' },
-                    { id: 'box_signature', name: 'Signature Box (60 Pieces)', desc: 'Chef\'s Choice: 6 Spicy Lemon, 6 Golden Bermuda, 8 Fire Volcano, 8 Ocean Delight, 8 New Style Maki, 8 Philadelphia Maki, 8 Crunchy Salmon, 8 Fried Salmon Hoso.', sizes: { 'Standard': 895 }, image: 'images/signature_box.jpg' }
+                    { id: 'box_24', name: 'Box 24 Pieces (16 + 8)', desc: 'Mixed sushi platter: 16 Uramaki (salmon, tuna & sesame rolls) + 8 Hosomaki.', sizes: { 'Standard': 399 }, image: 'images/box_24.jpg' },
+                    { id: 'box_37', name: 'Box 37 Pieces (25 + 12)', desc: 'Mixed sushi platter: 25 Uramaki (salmon, tuna & sesame rolls) + 12 Hosomaki.', sizes: { 'Standard': 549 }, image: 'images/box_37.jpg' },
+                    { id: 'box_45', name: 'Box 45 Pieces (30 + 15)', desc: 'Mixed sushi platter: 30 Uramaki (salmon, tuna & sesame rolls) + 15 Hosomaki.', sizes: { 'Standard': 699 }, image: 'images/box_45.jpg' },
+                    { id: 'box_60', name: 'Box 60 Pieces (40 + 20)', desc: 'Mixed sushi platter: 40 Uramaki (salmon, tuna & sesame rolls) + 20 Hosomaki.', sizes: { 'Standard': 799 }, image: 'images/box_60.jpg' },
+                    { id: 'box_75', name: 'Box 75 Pieces (50 + 25)', desc: 'Mixed sushi platter: 50 Uramaki (salmon, tuna & sesame rolls) + 25 Hosomaki.', sizes: { 'Standard': 949 }, image: 'images/box_75.jpg' },
+                    { id: 'box_90', name: 'Box 90 Pieces (60 + 30)', desc: 'Mixed sushi platter: 60 Uramaki (salmon, tuna & sesame rolls) + 30 Hosomaki.', sizes: { 'Standard': 1150 }, image: 'images/box_90.jpg' }
                 ]
             },
             {
